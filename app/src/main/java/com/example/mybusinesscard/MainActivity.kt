@@ -9,9 +9,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -32,7 +34,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.cartedevisite.R
 import com.example.mybusinesscard.ui.theme.CarteDeVisiteTheme
 
 class MainActivity : ComponentActivity() {
@@ -65,20 +66,29 @@ fun Cartedevisite() {
 fun BusinessCardScreen() {
 
     Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceEvenly,
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
+        Spacer(modifier = Modifier.height(30.dp))
         HeaderSection(
             logo = painterResource(R.drawable.android_logo),
             name = stringResource(R.string.NomPrenom),
             title = "Business Card"
         )
+
+        //Spacer(modifier = Modifier.height(16.dp))// Espacement entre la section header et la section contact
         ContactSection(
             phone = "05 65 43 25 50",
             email = stringResource(R.string.adresseMail),
-            socialAddress = "cybersecurite.ci"
+            socialAddress = "cybersecurite.ci",
+
         )
+        //Spacer(modifier = Modifier.height(50.dp))
+
+
     }
 }
 
@@ -123,6 +133,8 @@ fun ContactSection(
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(bottom = 20.dp)
+
             .padding(16.dp),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally

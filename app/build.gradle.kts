@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cartedevisite"
+    namespace = "com.example.mybusinesscard"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.cartedevisite"
+        applicationId = "com.example.mybusinesscard"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
